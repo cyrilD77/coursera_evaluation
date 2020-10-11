@@ -2,20 +2,22 @@
 #file: guessingguess.sh
 
 number=`ls | wc -l`
-response=5
-
-echo "How many files do you have in your current repertory?" 
-
+response=0
 
 comparateur()
 {
-	if [ $number -eq $response ];
-		then echo "congratulation, you found the good response\!"
-		elif [[ $number -gt $reponse ]];
+	if [ $number == $response ];
+		then echo "congratulation, you found the good response!"
+		elif [[ $response -gt $number ]];
 			then echo "it's to high, try again"
 			else echo "it's to low, try again"
 	fi
 }
 
-comparateur
+while [ $response != $number ];
+	do echo "How many files do you have in your current repertory?" 
+	read response
+	comparateur
+done
+
 

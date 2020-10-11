@@ -10,3 +10,9 @@ Modified the dimanche 11 octobre 2020, 20:04:53 (UTC+0200)
 
 guessinggame.sh have 21 lines 
 
+file: guessinggame.sh 
+
+Modified the dimanche 11 octobre 2020, 20:39:52 (UTC+0200) 
+
+guessinggame.sh have 23 lines 
+
