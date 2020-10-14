@@ -1,23 +1,33 @@
-#!bin/bash
+#!usr/bin/bash
 #file: guessingguess.sh
 
-number=`ls | wc -l`
-response=0
+number=`ls -a | wc -l`
+response=""
 
-comparateur()
+function comparateur()
+
 {
-	if [ $number == $response ];
-		then echo "congratulation, you found the good response!"
-		elif [[ $response -gt $number ]];
-			then echo "it's to high, try again"
-			else echo "it's to low, try again"
+	if [[ $response > $number ]];
+		then echo "It's to high, try again"
+		elif [[ $response < $number ]];
+			then 
+			echo "It's to low, try again"
+		
 	fi
 }
 
-while [ $response != $number ];
-	do echo "How many files do you have in your current repertory?" 
+echo "How many files do you have in your current repertory?" 
 	read response
-	comparateur
-done
 
+if [ $number == $response ];
+	then echo "congratulation, you found the good response!"
+	else
+		while [ $response != $number ];
+			do comparateur
+			echo "How many files do you have in your current repertory?" 
+			read response
+		
+		done
+		echo "Congratulation, you find the good response!"
+	fi
 
